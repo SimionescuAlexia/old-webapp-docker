@@ -1,11 +1,11 @@
 <?php
-$host = 'localhost';
-$user = 'root';
-$password = '';
-$db = 'agentie_turism';
+// Conexiune pentru varianta cu containere (host = numele containerului MySQL)
+$host     = 'mysql';
+$user     = 'root';
+$pass     = 'pass';
+$db       = 'agentie_turism';
 
-$conn = new mysqli($host, $user, $password, $db);
-if ($conn->connect_error) {
-    die("Conexiune eșuată: " . $conn->connect_error);
-}
+mysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);
+$mysqli = new mysqli($host, $user, $pass, $db);
+$mysqli->set_charset('utf8mb4');
 ?>
